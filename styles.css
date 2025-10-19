@@ -1,0 +1,330 @@
+/* Custom CSS Variables - Now Monochrome */
+:root {
+    --bg-dark: #0f0f0f;
+    --text-light: #ffffff; /* Pure white for contrast */
+    --accent-color: #bbbbbb; /* Light grey for secondary accents/highlights */
+    --contrast-white: #ffffff;
+    --font-family: 'Poppins', sans-serif;
+    --card-dark: #1a1a1a; 
+    --line-color: #333333; /* Dark grey for subtle lines/borders */
+}
+
+/* Base Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden; 
+}
+
+/* Utility Class */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 2.8rem; 
+    margin-bottom: 2.5rem;
+    text-align: center;
+    color: var(--text-light);
+    letter-spacing: 1px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-light);
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    background: var(--contrast-white);
+    color: var(--bg-dark);
+    padding: 16px 40px; 
+    border: none;
+    border-radius: 4px; 
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    background: var(--accent-color); /* Button background changes to light gray on hover */
+    color: var(--bg-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2); /* Subtle white/gray shadow */
+}
+
+/* --- Section Padding --- */
+section {
+    padding: 120px 0; 
+}
+
+/* --- 1. Hero Section --- */
+.hero-section {
+    background: url('hero-bg-placeholder.jpg') no-repeat center center/cover; 
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5); 
+}
+
+.hero-content {
+    max-width: 900px;
+    color: var(--contrast-white);
+}
+
+.hero-logo {
+    max-width: 450px; 
+    height: auto;
+    margin-bottom: 1rem; 
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.8));
+}
+
+
+.hero-content p {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    letter-spacing: 1.5px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* REMOVED: .fixed-nav styling */
+
+
+/* --- 2. About Me Section --- */
+.about-section {
+    background-color: var(--bg-dark);
+    color: var(--accent-color); /* Light gray for body text */
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px; 
+    align-items: center;
+    text-align: left;
+}
+
+.artist-image {
+    width: 280px; 
+    height: 280px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--accent-color); /* Light gray border */
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+}
+
+.about-text h2 {
+    text-align: left;
+    margin-bottom: 1.5rem;
+    color: var(--text-light); /* White for title */
+}
+
+.about-text p {
+    margin-bottom: 1.2rem;
+    font-weight: 300;
+    font-size: 1.05rem;
+}
+
+/* --- 3. Services Section --- */
+.services-section {
+    background-color: var(--card-dark);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px; 
+}
+
+.service-card {
+    background-color: var(--bg-dark); 
+    padding: 35px;
+    border-radius: 8px; 
+    text-align: center;
+    border: 1px solid var(--line-color); /* Darker grey border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.8);
+    border-color: var(--accent-color); /* Highlight border on hover */
+}
+
+.service-card h3 {
+    color: var(--text-light);
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+}
+
+.service-card p {
+    color: var(--accent-color); /* Light grey for description */
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.service-card .price {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-light); /* White for price */
+    margin-bottom: 25px;
+}
+
+.learn-btn {
+    /* Uses main button style, but smaller for cards */
+    display: inline-block;
+    background: var(--contrast-white);
+    color: var(--bg-dark);
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.learn-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-dark);
+}
+
+
+/* --- 4. Contact Section --- */
+.contact-section {
+    background-color: var(--bg-dark);
+    text-align: center;
+    padding-bottom: 150px; 
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 18px; 
+    border: 1px solid var(--line-color);
+    background-color: var(--card-dark);
+    color: var(--text-light);
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--text-light); /* Pure white focus ring */
+    outline: none;
+}
+
+.contact-info {
+    color: var(--accent-color);
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-icon {
+    font-size: 2rem;
+    color: var(--text-light);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--accent-color); /* Light gray hover */
+    transform: scale(1.1);
+}
+
+/* --- Footer --- */
+footer {
+    background: #050505;
+    color: #444;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9rem;
+}
+
+/* --- Animations (Fade-in) --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Responsive Design (Media Queries) --- */
+@media (max-width: 800px) {
+    .hero-logo {
+        max-width: 350px; 
+    }
+    .hero-content p {
+        font-size: 1.4rem;
+    }
+    
+    .content-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about-text h2 {
+        text-align: center;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-logo {
+        max-width: 280px;
+    }
+    
+    section {
+        padding: 80px 0;
+    }
+
+    .btn {
+        padding: 14px 30px;
+    }
+}
