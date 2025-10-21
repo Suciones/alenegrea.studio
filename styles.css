@@ -364,9 +364,9 @@ footer {
         font-size: 1.4rem;
     }
     
-    /* ⭐ NEW: Adjust background position on mobile to "trim" from top ⭐ */
+    /* ⭐ FIX: Adjust background position to shift image UP by 2cm ⭐ */
     .hero-section {
-        background-position: center 2cm; /* Shifts the image down by 2cm */
+        background-position: center -2cm; 
     }
 
     /* About Section: Stack image and text */
