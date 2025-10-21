@@ -721,6 +721,10 @@ footer {
 /* --- Responsive Design (Media Queries) --- */
 
 @media (max-width: 800px) {
+    #about {
+        padding-top: 20px; /* Reduced to 20px from 120px */
+        padding-bottom: 120px;
+    }
 
     .hero-logo {
 
