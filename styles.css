@@ -92,12 +92,12 @@ a {
     box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2); 
 }
 
-/* --- Section Padding --- */
+/* --- Section Padding (Desktop Default) --- */
 section {
-    padding: 120px 0; 
+    padding: 120px 0; /* DEFAULT DESKTOP PADDING (Top and Bottom) */
 }
 
-/* --- 1. Hero Section --- */
+/* --- 1. Hero Section (NO CHANGES ALLOWED HERE) --- */
 .hero-section {
     position: relative;
     top: 0;
@@ -106,8 +106,7 @@ section {
     height: 100vh; 
     
     background: url('hero-bg-placeholder.webp') no-repeat center center/cover;
-    /* Desktop Background Position: Shifted UP by 2cm */
-    background-position: center center; 
+    background-position: center top -5%; 
     
     display: flex;
     align-items: center;
@@ -360,9 +359,9 @@ footer {
 
 /* --- Responsive Design (Media Queries) --- */
 @media (max-width: 800px) {
-    /* ⭐ MODIFICATION: Reduces padding on all sections for mobile/tablet ⭐ */
+    /* ⭐ MODIFICATION: Reduces TOP padding on generic sections on mobile/tablet ⭐ */
     section {
-        padding: 30px 0; /* Reduced top padding, kept bottom padding relative */
+        padding: 30px 0 120px 0; /* Top: 30px, Bottom: 120px (Desktop default) */
     }
 
     .hero-logo {
@@ -372,7 +371,7 @@ footer {
         font-size: 1.4rem;
     }
     
-    /* Corrected Hero Background Shift (Desktop is now fixed by the default rule) */
+    /* Hero Background Position (Kept consistent with previous settings) */
     .hero-section {
         background-position: center -5%; 
     }
@@ -423,9 +422,9 @@ footer {
 }
 
 @media (max-width: 600px) {
-    /* ⭐ MODIFICATION: Reduces padding on all sections for smallest mobile screens ⭐ */
+    /* ⭐ MODIFICATION: Reduces TOP padding on generic sections for smallest mobile screens ⭐ */
     section {
-        padding: 20px 0; /* Even smaller gap for very tight mobile screens */
+        padding: 20px 0 120px 0; /* Top: 20px, Bottom: 120px (Desktop default) */
     }
     
     /* Corrected Hero Background Shift (Aggressive UPWARD shift for tall phones) */
