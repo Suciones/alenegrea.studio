@@ -2,11 +2,11 @@
 :root {
     --bg-dark: #0f0f0f;
     --text-light: #ffffff; 
-    --accent-color: #bbbbbb; /* Light grey for secondary accents/highlights */
+    --accent-color: #bbbbbb; 
     --contrast-white: #ffffff;
     --font-family: 'Poppins', sans-serif;
-    --card-dark: #1a1a1a; /* Slightly lighter dark for cards */
-    --line-color: #333333; /* Dark grey for subtle lines/borders */
+    --card-dark: #1a1a1a; 
+    --line-color: #333333; 
 }
 
 /* Base Reset and Global Styles */
@@ -105,7 +105,10 @@ section {
     width: 100%; 
     height: 100vh; 
     
-    background: url('hero-bg-placeholder.webp') no-repeat center center/cover; 
+    background: url('hero-bg-placeholder.webp') no-repeat center center/cover;
+    /* Default desktop position */
+    background-position: center center; 
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -364,9 +367,9 @@ footer {
         font-size: 1.4rem;
     }
     
-    /* ⭐ FIX: Adjust background position to shift image UP by 2cm ⭐ */
+    /* ⭐ FINAL FIX: Shift image UP by 4% of the container height (Adaptive Trim) ⭐ */
     .hero-section {
-        background-position: center -2cm; 
+        background-position: center -4%; 
     }
 
     /* About Section: Stack image and text */
