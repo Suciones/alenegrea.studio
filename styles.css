@@ -420,7 +420,7 @@ footer {
 @media (max-width: 600px) {
     /* ⭐ SMALLEST PHONE FIX: Shifts image UP by 15% (Most aggressive upward pull for tall screens) ⭐ */
     .hero-section {
-        background-position: center -15%; 
+        background-position: center -5cm; 
     }
 
     /* FINAL FIX: Disables animation and forces content visibility on mobile */
