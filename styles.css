@@ -369,7 +369,7 @@ footer {
     
     /* ⭐ FINAL FIX: Shift image UP by 4% of the container height (Adaptive Trim) ⭐ */
     .hero-section {
-        background-position: center -30%; 
+        background-position: center -3cm; 
     }
 
     /* About Section: Stack image and text */
