@@ -1,449 +1,887 @@
 /* Custom CSS Variables - Monochrome Theme */
+
 :root {
+
     --bg-dark: #0f0f0f;
+
     --text-light: #ffffff; 
+
     --accent-color: #bbbbbb; 
+
     --contrast-white: #ffffff;
+
     --font-family: 'Poppins', sans-serif;
+
     --card-dark: #1a1a1a; 
+
     --line-color: #333333; 
+
 }
+
+
 
 /* Base Reset and Global Styles */
+
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
+
+
 
 /* CRITICAL FIX for Mobile Viewport rendering and eliminating the black bar */
+
 html, body {
+
     width: 100%;
+
     min-width: 100%;
+
     overflow-x: hidden; 
+
     padding-top: 0 !important;
+
     margin-top: 0 !important;
+
     padding-top: constant(safe-area-inset-top);
+
     padding-top: env(safe-area-inset-top);
+
 }
+
+
 
 html {
+
     scroll-behavior: smooth;
+
 }
+
+
 
 body {
+
     font-family: var(--font-family);
+
     background-color: var(--bg-dark);
+
     color: var(--text-light);
+
     line-height: 1.6;
+
 }
+
+
 
 /* NEW FIX: Ensure main content takes up space and allows wrapping */
+
 main {
+
     display: flex;
+
     flex-direction: column;
+
     min-width: 320px; 
+
 }
+
+
 
 /* Utility Class */
+
 .container {
+
     max-width: 1100px;
+
     margin: 0 auto;
+
     padding: 0 20px;
+
 }
+
+
 
 h1, h2, h3 {
+
     font-weight: 600;
+
 }
+
+
 
 h2 {
+
     font-size: 2.8rem; 
+
     margin-bottom: 2.5rem;
+
     text-align: center;
+
     color: var(--text-light);
+
     letter-spacing: 1px;
+
 }
+
+
 
 a {
+
     text-decoration: none;
+
     color: var(--text-light);
+
 }
+
+
 
 /* --- Buttons --- */
+
 .btn {
+
     display: inline-block;
+
     background: var(--contrast-white);
+
     color: var(--bg-dark);
+
     padding: 16px 40px; 
+
     border: none;
+
     border-radius: 4px; 
+
     font-size: 1.1rem;
+
     font-weight: 700;
+
     cursor: pointer;
+
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+
     text-transform: uppercase;
+
     letter-spacing: 1px;
+
 }
+
+
 
 .btn:hover {
+
     background: var(--accent-color); 
+
     color: var(--bg-dark);
+
     transform: translateY(-3px);
+
     box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2); 
+
 }
 
-/* --- Section Padding (Desktop Default) --- */
+
+
+/* --- Section Padding --- */
+
 section {
-    padding: 120px 0; /* DEFAULT DESKTOP PADDING (Top and Bottom) */
+
+    padding: 120px 0; 
+
 }
 
-/* --- 1. Hero Section (NO CHANGES ALLOWED HERE) --- */
+
+
+/* --- 1. Hero Section --- */
+
 .hero-section {
+
     position: relative;
+
     top: 0;
+
     left: 0;
+
     width: 100%; 
+
     height: 100vh; 
+
     
+
     background: url('hero-bg-placeholder.webp') no-repeat center center/cover;
-    background-position: center top -5%; 
+
+    /* ⭐ FINAL DESKTOP FIX: Use percentage shift for reliable UPWARD movement ⭐ */
+
+    background-position: center center -2cm; 
+
     
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     text-align: center;
+
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5); 
+
 }
+
+
 
 .hero-content {
+
     max-width: 900px;
+
     color: var(--contrast-white);
+
     padding-top: env(safe-area-inset-top); 
+
 }
+
+
 
 .hero-logo {
+
     max-width: 450px; 
+
     height: auto;
+
     margin-bottom: 1rem; 
+
     filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.8));
+
 }
 
+
+
 .hero-content p {
+
     font-size: 1.8rem;
+
     font-weight: 300;
+
     margin-bottom: 3rem;
+
     letter-spacing: 1.5px;
+
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+
 }
+
+
+
 
 
 /* --- 2. About Me Section --- */
+
 .about-section {
+
     background-color: var(--bg-dark);
+
     color: var(--accent-color); 
+
 }
+
+
 
 .content-grid {
+
     display: grid;
+
     grid-template-columns: 1fr 2fr;
+
     gap: 80px; 
+
     align-items: center;
+
     text-align: left;
+
 }
+
+
 
 .artist-image {
+
     width: 280px; 
+
     height: 280px;
+
     object-fit: cover;
+
     border-radius: 50%;
+
     border: 3px solid var(--accent-color); 
+
     box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+
 }
+
+
 
 .about-text h2 {
+
     text-align: left;
+
     margin-bottom: 1.5rem;
+
     color: var(--text-light); 
+
 }
+
+
 
 .about-text p {
+
     margin-bottom: 1.2rem;
+
     font-weight: 300;
+
     font-size: 1.05rem;
+
 }
+
+
 
 /* --- 3. Services Section --- */
+
 .services-section {
+
     background-color: var(--card-dark);
+
     min-height: 80vh; 
+
 }
+
+
 
 .service-grid {
+
     display: grid;
+
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
     gap: 40px; 
+
     grid-auto-rows: minmax(auto, 1fr); 
+
 }
+
+
 
 .service-card {
+
     background-color: var(--bg-dark); 
+
     padding: 35px;
+
     border-radius: 8px; 
+
     text-align: center;
+
     border: 1px solid var(--line-color); 
+
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+
     
+
     display: flex; 
+
     flex-direction: column;
+
     align-items: center;
+
     justify-content: space-between;
+
 }
+
+
 
 .service-card:hover {
+
     transform: translateY(-8px); 
+
     box-shadow: 0 18px 35px rgba(0, 0, 0, 0.8);
+
     border-color: var(--accent-color); 
+
 }
+
+
 
 .service-img {
+
     width: 100%; 
+
     height: auto;
+
     max-height: 200px; 
+
     object-fit: cover; 
+
     border-radius: 4px; 
+
     margin-bottom: 20px; 
+
     border: 1px solid var(--line-color);
+
 }
+
+
 
 .service-card h3 {
+
     color: var(--text-light);
+
     margin-bottom: 10px;
+
     font-size: 1.8rem;
+
     letter-spacing: 0.5px;
+
 }
+
+
 
 .service-card p {
+
     color: var(--accent-color); 
+
     margin-bottom: 20px;
+
     font-weight: 300;
+
 }
+
+
 
 .service-card .price {
+
     display: block;
+
     font-size: 1.6rem;
+
     font-weight: 700;
+
     color: var(--text-light); 
+
     margin-bottom: 25px;
+
 }
+
+
 
 .learn-btn {
+
     display: inline-block;
+
     background: var(--contrast-white);
+
     color: var(--bg-dark);
+
     padding: 12px 30px;
+
     border: none;
+
     border-radius: 4px;
+
     font-size: 0.95rem;
+
     font-weight: 600;
+
     cursor: pointer;
+
     transition: background-color 0.3s ease, color 0.3s ease;
+
     text-transform: uppercase;
+
     margin-top: auto; 
+
 }
 
+
+
 .learn-btn:hover {
+
     background-color: var(--accent-color);
+
     color: var(--bg-dark);
+
 }
+
+
+
 
 
 /* --- 4. Contact Section - Social Hub Styling --- */
+
 .contact-section {
+
     background-color: var(--bg-dark);
-    padding-bottom: 150px; 
+
     text-align: center;
+
+    padding-bottom: 150px; 
+
 }
+
+
 
 .social-links-minimal {
+
     display: flex;
+
     justify-content: center;
+
     gap: 40px;
+
     margin-bottom: 30px;
+
 }
+
+
 
 .social-icon-large {
+
     font-size: 4rem;
+
     color: var(--text-light);
+
     transition: color 0.3s ease, transform 0.3s ease;
+
 }
+
+
 
 .social-icon-large:hover {
+
     color: var(--accent-color);
+
     transform: scale(1.1);
+
 }
+
+
 
 .contact-info {
+
     color: var(--accent-color);
+
     margin-bottom: 40px;
+
 }
+
+
 
 /* Grid for the Social Previews */
+
 .social-previews {
+
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     grid-auto-rows: 1fr; 
+
     gap: 30px;
+
     max-width: 900px;
+
     margin: 0 auto;
+
 }
+
+
 
 .social-embed {
+
     background-color: var(--card-dark);
+
     padding: 20px;
+
     border-radius: 8px;
+
     text-align: center;
+
     border: 1px solid var(--line-color);
+
     overflow: hidden; 
+
     display: flex; 
+
     flex-direction: column; 
+
 }
+
+
 
 .social-embed h3 {
+
     color: var(--text-light);
+
     font-size: 1.5rem;
+
     margin-bottom: 15px;
+
 }
+
+
 
 /* Force both embed blockquotes to fit the container and manage height */
+
 .instagram-embed > blockquote,
+
 .tiktok-embed > blockquote {
+
     max-width: 100% !important; 
+
     min-width: unset !important; 
+
     width: 100% !important;
+
     margin: 0 auto;
+
     
+
     flex-grow: 1; 
+
     display: block;
+
     position: relative;
+
     
+
     aspect-ratio: 1 / 1; 
+
 }
+
+
 
 /* Target the iframe inside the blockquotes to ensure they fill the aspect-ratio container */
+
 .instagram-embed iframe,
+
 .tiktok-embed iframe {
+
     width: 100% !important;
+
     height: 100% !important;
+
 }
+
+
 
 /* --- Footer --- */
+
 footer {
+
     background: #050505;
+
     color: #444;
+
     text-align: center;
+
     padding: 30px 0;
+
     font-size: 0.9rem;
+
 }
+
+
 
 /* --- Animations --- */
+
 .fade-in {
+
     opacity: 0;
+
     transform: translateY(20px);
+
     transition: opacity 1s ease-out, transform 1s ease-out;
+
 }
+
+
 
 .visible {
+
     opacity: 1;
+
     transform: translateY(0);
+
 }
+
+
 
 /* --- Responsive Design (Media Queries) --- */
+
 @media (max-width: 800px) {
-    /* ⭐ MODIFICATION: Reduces TOP padding on generic sections on mobile/tablet ⭐ */
-    section {
-        padding: 30px 0 120px 0; /* Top: 30px, Bottom: 120px (Desktop default) */
-    }
 
     .hero-logo {
+
         max-width: 350px; 
+
     }
+
     .hero-content p {
+
         font-size: 1.4rem;
+
     }
+
     
-    /* Hero Background Position (Kept consistent with previous settings) */
+
+    /* ⭐ MOBILE/TABLET FIX: Shifts image UP by 5% (Stronger upward pull) ⭐ */
+
     .hero-section {
+
         background-position: center -5cm; 
+
     }
+
+
 
     /* About Section: Stack image and text */
+
     .content-grid {
+
         grid-template-columns: 1fr;
+
         text-align: center;
+
     }
+
+
 
     .about-text h2 {
+
         text-align: center;
+
         margin-top: 30px;
+
     }
+
+
 
     /* CRITICAL FIX: Force Services to Stack with Flexbox on Mobile */
+
     .service-grid {
+
         display: flex;
+
         flex-direction: column;
+
         gap: 30px; 
+
         width: 100%;
+
     }
+
     
+
     /* Ensure the individual cards take up full width */
+
     .service-card {
+
         width: 100%;
+
         max-width: 100%;
+
         margin: 0 auto;
+
         display: flex;
+
         flex-direction: column;
+
         align-items: center;
+
     }
+
+
 
     /* Social Preview Stacking */
+
     .social-previews {
+
         grid-template-columns: 1fr; 
+
         grid-auto-rows: auto; 
+
     }
+
+
 
     .social-embed > blockquote,
+
     .tiktok-embed > blockquote {
+
         aspect-ratio: 1 / 1.5; 
+
     }
+
+
 
     .social-icon-large {
+
         font-size: 3rem;
+
     }
+
 }
 
+
+
 @media (max-width: 600px) {
-    /* ⭐ MODIFICATION: Reduces TOP padding on generic sections for smallest mobile screens ⭐ */
-    section {
-        padding: 20px 0 120px 0; /* Top: 20px, Bottom: 120px (Desktop default) */
-    }
-    
-    /* Corrected Hero Background Shift (Aggressive UPWARD shift for tall phones) */
+
+    /* ⭐ SMALLEST PHONE FIX: Shifts image UP by 15% (Most aggressive upward pull for tall screens) ⭐ */
+
     .hero-section {
-        background-position: center -15%; 
+
+        background-position: center -5cm; 
+
     }
 
+
+
     /* FINAL FIX: Disables animation and forces content visibility on mobile */
+
     .fade-in {
+
         opacity: 1 !important; 
+
         transform: translateY(0) !important;
+
         transition: none !important; /* Removes the transition delay */
+
     }
+
     
+
     .hero-logo {
+
         max-width: 280px;
+
     }
+
     
-    .btn {
-        padding: 14px 30px;
+
+    section {
+
+        padding: 80px 0;
+
     }
+
+
+
+    .btn {
+
+        padding: 14px 30px;
+
+    }
+
 }
