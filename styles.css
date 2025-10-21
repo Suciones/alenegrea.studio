@@ -2,11 +2,11 @@
 :root {
     --bg-dark: #0f0f0f;
     --text-light: #ffffff; 
-    --accent-color: #bbbbbb; /* Light grey for secondary accents/highlights */
+    --accent-color: #bbbbbb; 
     --contrast-white: #ffffff;
     --font-family: 'Poppins', sans-serif;
-    --card-dark: #1a1a1a; /* Slightly lighter dark for cards */
-    --line-color: #333333; /* Dark grey for subtle lines/borders */
+    --card-dark: #1a1a1a; 
+    --line-color: #333333; 
 }
 
 /* Base Reset and Global Styles */
@@ -16,11 +16,11 @@
     box-sizing: border-box;
 }
 
-/* CRITICAL FIX for iPhone/Mobile Viewport rendering */
+/* CRITICAL FIX for Mobile Viewport rendering */
 html, body {
     width: 100%;
     min-width: 100%;
-    overflow-x: hidden; /* Prevents horizontal scroll from layout issues */
+    overflow-x: hidden; 
 }
 
 html {
@@ -34,12 +34,22 @@ body {
     line-height: 1.6;
 }
 
+/* --- MAIN CONTENT FIX --- */
+/* NEW FIX: Ensure main content takes up space and allows wrapping */
+main {
+    display: flex;
+    flex-direction: column;
+    min-width: 320px; /* Minimum width to prevent iPhone collapse */
+}
+
+
 /* Utility Class */
 .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
+/* ... (H1, H2, H3, A styles remain the same) ... */
 
 h1, h2, h3 {
     font-weight: 600;
@@ -110,7 +120,6 @@ section {
     filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.8));
 }
 
-
 .hero-content p {
     font-size: 1.8rem;
     font-weight: 300;
@@ -158,7 +167,6 @@ section {
 /* --- 3. Services Section --- */
 .services-section {
     background-color: var(--card-dark);
-    /* Ensure vertical space for mobile visibility */
     min-height: 80vh; 
 }
 
@@ -166,7 +174,6 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px; 
-    /* NEW: Ensures grid rows render even if content is complex */
     grid-auto-rows: minmax(auto, 1fr); 
 }
 
@@ -178,7 +185,6 @@ section {
     border: 1px solid var(--line-color); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     
-    /* Ensure content displays correctly as a column */
     display: flex; 
     flex-direction: column;
     align-items: center;
@@ -250,7 +256,6 @@ section {
     padding-bottom: 150px; 
 }
 
-/* Large social icons above the previews */
 .social-links-minimal {
     display: flex;
     justify-content: center;
@@ -278,7 +283,6 @@ section {
 .social-previews {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* Forces siblings (social-embed cards) to equal height on desktop */
     grid-auto-rows: 1fr; 
     gap: 30px;
     max-width: 900px;
@@ -305,13 +309,11 @@ section {
 /* Force both embed blockquotes to fit the container and manage height */
 .instagram-embed > blockquote,
 .tiktok-embed > blockquote {
-    /* Override provider's inline styles */
     max-width: 100% !important; 
     min-width: unset !important; 
     width: 100% !important;
     margin: 0 auto;
     
-    /* Make the blockquote fill the remaining vertical space */
     flex-grow: 1; 
     display: block;
     position: relative;
