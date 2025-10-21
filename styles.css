@@ -364,6 +364,11 @@ footer {
         font-size: 1.4rem;
     }
     
+    /* ⭐ NEW: Adjust background position on mobile to "trim" from top ⭐ */
+    .hero-section {
+        background-position: center 2cm; /* Shifts the image down by 2cm */
+    }
+
     /* About Section: Stack image and text */
     .content-grid {
         grid-template-columns: 1fr;
@@ -410,7 +415,7 @@ footer {
 }
 
 @media (max-width: 600px) {
-    /* ⭐ FINAL FIX: Disables animation and forces content visibility on mobile ⭐ */
+    /* FINAL FIX: Disables animation and forces content visibility on mobile */
     .fade-in {
         opacity: 1 !important; 
         transform: translateY(0) !important;
