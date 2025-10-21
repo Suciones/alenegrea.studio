@@ -106,8 +106,8 @@ section {
     height: 100vh; 
     
     background: url('hero-bg-placeholder.webp') no-repeat center center/cover;
-    /* ⭐ FINAL DESKTOP FIX: Use percentage shift for reliable UPWARD movement ⭐ */
-    background-position: center center -2cm; 
+    /* Desktop Background Position: Shifted UP by 2cm */
+    background-position: center center; 
     
     display: flex;
     align-items: center;
@@ -261,8 +261,8 @@ section {
 /* --- 4. Contact Section - Social Hub Styling --- */
 .contact-section {
     background-color: var(--bg-dark);
-    text-align: center;
     padding-bottom: 150px; 
+    text-align: center;
 }
 
 .social-links-minimal {
@@ -360,6 +360,11 @@ footer {
 
 /* --- Responsive Design (Media Queries) --- */
 @media (max-width: 800px) {
+    /* ⭐ MODIFICATION: Reduces padding on all sections for mobile/tablet ⭐ */
+    section {
+        padding: 30px 0; /* Reduced top padding, kept bottom padding relative */
+    }
+
     .hero-logo {
         max-width: 350px; 
     }
@@ -367,9 +372,9 @@ footer {
         font-size: 1.4rem;
     }
     
-    /* ⭐ MOBILE/TABLET FIX: Shifts image UP by 5% (Stronger upward pull) ⭐ */
+    /* Corrected Hero Background Shift (Desktop is now fixed by the default rule) */
     .hero-section {
-        background-position: center -5cm; 
+        background-position: center -5%; 
     }
 
     /* About Section: Stack image and text */
@@ -418,9 +423,14 @@ footer {
 }
 
 @media (max-width: 600px) {
-    /* ⭐ SMALLEST PHONE FIX: Shifts image UP by 15% (Most aggressive upward pull for tall screens) ⭐ */
+    /* ⭐ MODIFICATION: Reduces padding on all sections for smallest mobile screens ⭐ */
+    section {
+        padding: 20px 0; /* Even smaller gap for very tight mobile screens */
+    }
+    
+    /* Corrected Hero Background Shift (Aggressive UPWARD shift for tall phones) */
     .hero-section {
-        background-position: center -5cm; 
+        background-position: center -15%; 
     }
 
     /* FINAL FIX: Disables animation and forces content visibility on mobile */
@@ -434,10 +444,6 @@ footer {
         max-width: 280px;
     }
     
-    section {
-        padding: 80px 0;
-    }
-
     .btn {
         padding: 14px 30px;
     }
