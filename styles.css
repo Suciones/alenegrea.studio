@@ -2,11 +2,11 @@
 :root {
     --bg-dark: #0f0f0f;
     --text-light: #ffffff; 
-    --accent-color: #bbbbbb; 
+    --accent-color: #bbbbbb; /* Light grey for secondary accents/highlights */
     --contrast-white: #ffffff;
     --font-family: 'Poppins', sans-serif;
-    --card-dark: #1a1a1a; 
-    --line-color: #333333; 
+    --card-dark: #1a1a1a; /* Slightly lighter dark for cards */
+    --line-color: #333333; /* Dark grey for subtle lines/borders */
 }
 
 /* Base Reset and Global Styles */
@@ -34,14 +34,12 @@ body {
     line-height: 1.6;
 }
 
-/* --- MAIN CONTENT FIX --- */
 /* NEW FIX: Ensure main content takes up space and allows wrapping */
 main {
     display: flex;
     flex-direction: column;
-    min-width: 320px; /* Minimum width to prevent iPhone collapse */
+    min-width: 320px; 
 }
-
 
 /* Utility Class */
 .container {
@@ -49,7 +47,6 @@ main {
     margin: 0 auto;
     padding: 0 20px;
 }
-/* ... (H1, H2, H3, A styles remain the same) ... */
 
 h1, h2, h3 {
     font-weight: 600;
@@ -369,16 +366,32 @@ footer {
         margin-top: 30px;
     }
 
+    /* ⭐ CRITICAL FIX: Force Services to Stack with Flexbox on Mobile ⭐ */
+    .service-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 30px; 
+        width: 100%;
+    }
+    
+    /* Ensure the individual cards take up full width */
+    .service-card {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Social Preview Stacking */
     .social-previews {
-        /* Stack previews on small screens */
         grid-template-columns: 1fr; 
-        /* Allow height to flow based on content/embed size */
         grid-auto-rows: auto; 
     }
 
     .social-embed > blockquote,
     .tiktok-embed > blockquote {
-        /* Adjust aspect ratio for a more vertical phone view */
         aspect-ratio: 1 / 1.5; 
     }
 
