@@ -16,6 +16,13 @@
     box-sizing: border-box;
 }
 
+/* CRITICAL FIX for iPhone/Mobile Viewport rendering */
+html, body {
+    width: 100%;
+    min-width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scroll from layout issues */
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -25,7 +32,6 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-light);
     line-height: 1.6;
-    overflow-x: hidden; 
 }
 
 /* Utility Class */
@@ -152,13 +158,16 @@ section {
 /* --- 3. Services Section --- */
 .services-section {
     background-color: var(--card-dark);
-    min-height: 400px; 
+    /* Ensure vertical space for mobile visibility */
+    min-height: 80vh; 
 }
 
 .service-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px; 
+    /* NEW: Ensures grid rows render even if content is complex */
+    grid-auto-rows: minmax(auto, 1fr); 
 }
 
 .service-card {
@@ -169,7 +178,7 @@ section {
     border: 1px solid var(--line-color); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     
-    /* Ensures content displays correctly on all screen sizes */
+    /* Ensure content displays correctly as a column */
     display: flex; 
     flex-direction: column;
     align-items: center;
@@ -269,7 +278,7 @@ section {
 .social-previews {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* CRITICAL FIX: Forces siblings (social-embed cards) to equal height */
+    /* Forces siblings (social-embed cards) to equal height on desktop */
     grid-auto-rows: 1fr; 
     gap: 30px;
     max-width: 900px;
@@ -283,7 +292,6 @@ section {
     text-align: center;
     border: 1px solid var(--line-color);
     overflow: hidden; 
-    /* Allows content to stretch within the equal-height card */
     display: flex; 
     flex-direction: column; 
 }
@@ -303,12 +311,11 @@ section {
     width: 100% !important;
     margin: 0 auto;
     
-    /* CRITICAL FIX: Make the blockquote fill the remaining vertical space */
+    /* Make the blockquote fill the remaining vertical space */
     flex-grow: 1; 
     display: block;
     position: relative;
     
-    /* Sets the aspect ratio of the main content box (adjust as needed, 1/1 is square) */
     aspect-ratio: 1 / 1; 
 }
 
