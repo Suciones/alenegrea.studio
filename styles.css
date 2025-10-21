@@ -1,11 +1,11 @@
-/* Custom CSS Variables - Now Monochrome */
+/* Custom CSS Variables - Monochrome Theme */
 :root {
     --bg-dark: #0f0f0f;
-    --text-light: #ffffff; /* Pure white for contrast */
+    --text-light: #ffffff; 
     --accent-color: #bbbbbb; /* Light grey for secondary accents/highlights */
     --contrast-white: #ffffff;
     --font-family: 'Poppins', sans-serif;
-    --card-dark: #1a1a1a; 
+    --card-dark: #1a1a1a; /* Slightly lighter dark for cards */
     --line-color: #333333; /* Dark grey for subtle lines/borders */
 }
 
@@ -69,10 +69,10 @@ a {
 }
 
 .btn:hover {
-    background: var(--accent-color); /* Button background changes to light gray on hover */
+    background: var(--accent-color); 
     color: var(--bg-dark);
     transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2); /* Subtle white/gray shadow */
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2); 
 }
 
 /* --- Section Padding --- */
@@ -113,13 +113,11 @@ section {
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-/* REMOVED: .fixed-nav styling */
-
 
 /* --- 2. About Me Section --- */
 .about-section {
     background-color: var(--bg-dark);
-    color: var(--accent-color); /* Light gray for body text */
+    color: var(--accent-color); 
 }
 
 .content-grid {
@@ -135,14 +133,14 @@ section {
     height: 280px;
     object-fit: cover;
     border-radius: 50%;
-    border: 3px solid var(--accent-color); /* Light gray border */
+    border: 3px solid var(--accent-color); 
     box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
 }
 
 .about-text h2 {
     text-align: left;
     margin-bottom: 1.5rem;
-    color: var(--text-light); /* White for title */
+    color: var(--text-light); 
 }
 
 .about-text p {
@@ -152,6 +150,16 @@ section {
 }
 
 /* --- 3. Services Section --- */
+/* Styling for the new service images */
+.service-img {
+    width: 100%; /* Makes image fill the card horizontally */
+    height: auto;
+    max-height: 200px; /* Limits the vertical size of the image */
+    object-fit: cover; /* Ensures image covers the space without stretching */
+    border-radius: 4px; /* Matches card border radius */
+    margin-bottom: 20px; /* Space between image and title */
+    border: 1px solid var(--line-color);
+}
 .services-section {
     background-color: var(--card-dark);
 }
@@ -167,14 +175,14 @@ section {
     padding: 35px;
     border-radius: 8px; 
     text-align: center;
-    border: 1px solid var(--line-color); /* Darker grey border */
+    border: 1px solid var(--line-color); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
     transform: translateY(-8px); 
     box-shadow: 0 18px 35px rgba(0, 0, 0, 0.8);
-    border-color: var(--accent-color); /* Highlight border on hover */
+    border-color: var(--accent-color); 
 }
 
 .service-card h3 {
@@ -185,7 +193,7 @@ section {
 }
 
 .service-card p {
-    color: var(--accent-color); /* Light grey for description */
+    color: var(--accent-color); 
     margin-bottom: 20px;
     font-weight: 300;
 }
@@ -194,12 +202,11 @@ section {
     display: block;
     font-size: 1.6rem;
     font-weight: 700;
-    color: var(--text-light); /* White for price */
+    color: var(--text-light); 
     margin-bottom: 25px;
 }
 
 .learn-btn {
-    /* Uses main button style, but smaller for cards */
     display: inline-block;
     background: var(--contrast-white);
     color: var(--bg-dark);
@@ -219,59 +226,89 @@ section {
 }
 
 
-/* --- 4. Contact Section --- */
+/* --- 4. Contact Section - Social Hub Styling --- */
 .contact-section {
     background-color: var(--bg-dark);
     text-align: center;
     padding-bottom: 150px; 
 }
 
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto 30px;
+/* Large social icons above the previews */
+.social-links-minimal {
     display: flex;
-    flex-direction: column;
-    gap: 20px; 
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 30px;
 }
 
-.contact-form input,
-.contact-form textarea {
-    padding: 18px; 
-    border: 1px solid var(--line-color);
-    background-color: var(--card-dark);
-    color: var(--text-light);
-    border-radius: 4px;
-    font-size: 1rem;
-    transition: border-color 0.3s;
-}
-
-.contact-form textarea {
-    resize: none;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: var(--text-light); /* Pure white focus ring */
-    outline: none;
-}
-
-.contact-info {
-    color: var(--accent-color);
-}
-
-.social-links {
-    margin-top: 20px;
-}
-
-.social-icon {
-    font-size: 2rem;
+.social-icon-large {
+    font-size: 4rem;
     color: var(--text-light);
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.social-icon:hover {
-    color: var(--accent-color); /* Light gray hover */
+.social-icon-large:hover {
+    color: var(--accent-color);
     transform: scale(1.1);
+}
+
+.contact-info {
+    color: var(--accent-color);
+    margin-bottom: 40px;
+}
+
+/* Grid for the Social Previews */
+.social-previews {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* CRITICAL FIX: Forces siblings (social-embed cards) to equal height */
+    grid-auto-rows: 1fr; 
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.social-embed {
+    background-color: var(--card-dark);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--line-color);
+    overflow: hidden; 
+    /* Allows content to stretch within the equal-height card */
+    display: flex; 
+    flex-direction: column; 
+}
+
+.social-embed h3 {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+/* Force both embed blockquotes to fit the container and manage height */
+.instagram-embed > blockquote,
+.tiktok-embed > blockquote {
+    /* Override provider's inline styles */
+    max-width: 100% !important; 
+    min-width: unset !important; 
+    width: 100% !important;
+    margin: 0 auto;
+    
+    /* CRITICAL FIX: Make the blockquote fill the remaining vertical space */
+    flex-grow: 1; 
+    display: block;
+    position: relative;
+    
+    /* Sets the aspect ratio of the main content box (adjust as needed, 1/1 is square) */
+    aspect-ratio: 1 / 1; 
+}
+
+/* Target the iframe inside the blockquotes to ensure they fill the aspect-ratio container */
+.instagram-embed iframe,
+.tiktok-embed iframe {
+    width: 100% !important;
+    height: 100% !important;
 }
 
 /* --- Footer --- */
@@ -283,7 +320,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* --- Animations (Fade-in) --- */
+/* --- Animations --- */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
@@ -312,6 +349,23 @@ footer {
     .about-text h2 {
         text-align: center;
         margin-top: 30px;
+    }
+
+    .social-previews {
+        /* Stack previews on small screens */
+        grid-template-columns: 1fr; 
+        /* Allow height to flow based on content/embed size */
+        grid-auto-rows: auto; 
+    }
+
+    .social-embed > blockquote,
+    .tiktok-embed > blockquote {
+        /* Adjust aspect ratio for a more vertical phone view */
+        aspect-ratio: 1 / 1.5; 
+    }
+
+    .social-icon-large {
+        font-size: 3rem;
     }
 }
 
