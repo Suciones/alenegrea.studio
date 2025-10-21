@@ -150,18 +150,9 @@ section {
 }
 
 /* --- 3. Services Section --- */
-/* Styling for the new service images */
-.service-img {
-    width: 100%; /* Makes image fill the card horizontally */
-    height: auto;
-    max-height: 200px; /* Limits the vertical size of the image */
-    object-fit: cover; /* Ensures image covers the space without stretching */
-    border-radius: 4px; /* Matches card border radius */
-    margin-bottom: 20px; /* Space between image and title */
-    border: 1px solid var(--line-color);
-}
 .services-section {
     background-color: var(--card-dark);
+    min-height: 400px; 
 }
 
 .service-grid {
@@ -177,12 +168,28 @@ section {
     text-align: center;
     border: 1px solid var(--line-color); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Ensures content displays correctly on all screen sizes */
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .service-card:hover {
     transform: translateY(-8px); 
     box-shadow: 0 18px 35px rgba(0, 0, 0, 0.8);
     border-color: var(--accent-color); 
+}
+
+.service-img {
+    width: 100%; 
+    height: auto;
+    max-height: 200px; 
+    object-fit: cover; 
+    border-radius: 4px; 
+    margin-bottom: 20px; 
+    border: 1px solid var(--line-color);
 }
 
 .service-card h3 {
@@ -218,6 +225,7 @@ section {
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
     text-transform: uppercase;
+    margin-top: auto; 
 }
 
 .learn-btn:hover {
@@ -341,6 +349,7 @@ footer {
         font-size: 1.4rem;
     }
     
+    /* About Section: Stack image and text */
     .content-grid {
         grid-template-columns: 1fr;
         text-align: center;
