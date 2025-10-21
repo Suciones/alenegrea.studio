@@ -106,8 +106,8 @@ section {
     height: 100vh; 
     
     background: url('hero-bg-placeholder.webp') no-repeat center center/cover;
-    /* Default desktop position */
-    background-position: center center; 
+    /* ⭐ FINAL DESKTOP FIX: Use percentage shift for reliable UPWARD movement ⭐ */
+    background-position: center center -2cm; 
     
     display: flex;
     align-items: center;
@@ -367,9 +367,9 @@ footer {
         font-size: 1.4rem;
     }
     
-    /* ⭐ FINAL FIX: Shift image UP by 4% of the container height (Adaptive Trim) ⭐ */
+    /* ⭐ MOBILE/TABLET FIX: Shifts image UP by 5% (Stronger upward pull) ⭐ */
     .hero-section {
-        background-position: center -3cm; 
+        background-position: center -5cm; 
     }
 
     /* About Section: Stack image and text */
@@ -418,6 +418,11 @@ footer {
 }
 
 @media (max-width: 600px) {
+    /* ⭐ SMALLEST PHONE FIX: Shifts image UP by 15% (Most aggressive upward pull for tall screens) ⭐ */
+    .hero-section {
+        background-position: center -15%; 
+    }
+
     /* FINAL FIX: Disables animation and forces content visibility on mobile */
     .fade-in {
         opacity: 1 !important; 
