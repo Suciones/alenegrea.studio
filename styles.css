@@ -746,7 +746,7 @@ footer {
 
         background-position: center -5cm; 
 
-height: 100vh;
+height: -100vh;
     }
 
 
@@ -848,7 +848,7 @@ height: 100vh;
     .hero-section {
 
         background-position: center -5cm; 
-height: 100vh;
+height: -100vh;
 
     }
 
