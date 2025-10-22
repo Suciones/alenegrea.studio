@@ -726,6 +726,10 @@ footer {
 margin-top: -200px;
         padding-bottom: 120px;
     }
+.hero-content {
+        /* Pushes content UP by 120px to move it away from the bottom of the screen */
+        margin-bottom: 120px; 
+    }
 
     .hero-logo {
 
@@ -849,6 +853,10 @@ margin-top: -200px;
         padding-top:120px; /* REMOVES 120PX GAP */
 margin-top: -200px;
         padding-bottom: 120px;
+    }
+.hero-content {
+        /* Pushes content UP by 120px to move it away from the bottom of the screen */
+        margin-bottom: 120px; 
     }
 
     .hero-section {
