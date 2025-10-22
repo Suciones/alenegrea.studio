@@ -722,7 +722,7 @@ footer {
 
 @media (max-width: 800px) {
     #about {
-        padding-top: 20px; /* Reduced to 20px from 120px */
+        padding-top: 0px; /* Reduced to 20px from 120px */
         padding-bottom: 120px;
     }
 
@@ -844,6 +844,10 @@ height: -100vh;
 @media (max-width: 600px) {
 
     /* ⭐ SMALLEST PHONE FIX: Shifts image UP by 15% (Most aggressive upward pull for tall screens) ⭐ */
+#about {
+        padding-top: 0; /* REMOVES 120PX GAP */
+        padding-bottom: 120px;
+    }
 
     .hero-section {
 
