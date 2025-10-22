@@ -723,6 +723,7 @@ footer {
 @media (max-width: 800px) {
     #about {
         padding-top: 0px; /* Reduced to 20px from 120px */
+margin-top: -100px;
         padding-bottom: 120px;
     }
 
@@ -746,9 +747,7 @@ footer {
 
         background-position: center -5cm; 
 
-min-height: 85vh; /* Use a minimum viewport height */
-    height: auto;    /* Let content define the final height */
-    padding-bottom: 50px;
+
     }
 
 
@@ -848,15 +847,15 @@ min-height: 85vh; /* Use a minimum viewport height */
     /* ⭐ SMALLEST PHONE FIX: Shifts image UP by 15% (Most aggressive upward pull for tall screens) ⭐ */
 #about {
         padding-top: 0; /* REMOVES 120PX GAP */
+margin-top: -100px;
         padding-bottom: 120px;
     }
 
     .hero-section {
 
         background-position: center -5cm; 
-min-height: 85vh; /* Use a minimum viewport height */
-    height: auto;    /* Let content define the final height */
-    padding-bottom: 50px;
+
+    
 
     }
 
