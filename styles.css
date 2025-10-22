@@ -746,7 +746,9 @@ footer {
 
         background-position: center -5cm; 
 
-height: -100vh;
+min-height: 85vh; /* Use a minimum viewport height */
+    height: auto;    /* Let content define the final height */
+    padding-bottom: 50px;
     }
 
 
@@ -852,7 +854,9 @@ height: -100vh;
     .hero-section {
 
         background-position: center -5cm; 
-height: -100vh;
+min-height: 85vh; /* Use a minimum viewport height */
+    height: auto;    /* Let content define the final height */
+    padding-bottom: 50px;
 
     }
 
